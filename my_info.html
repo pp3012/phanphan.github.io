@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo" >
+    <strong>My Portfolio</strong>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#intro">Giới thiệu</a>
+    <a href="#edu">Học vấn</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .logo {
+    font-family: "Brush Script MT", cursive;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #7AB2B2;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #7AB2B2;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #C7D9DD; /* Đổi màu khi di chuột vào */
+  }
+</style>
+
+
+<style>
+  section {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 60px 10%;
+    line-height: 1.6;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color:#7AB2B2;
+  }
+
+
+  #intro {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .intro-text { flex: 1; }
+  .intro-image { flex: 1; text-align: center; }
+
+  .intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Bo góc ảnh cho hiện đại */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .edu-item {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  .year { font-weight: bold; color: #7AB2B2; margin-right: 10px; }
+
+  #contact ul { padding: 0; }
+  #contact li { margin-bottom: 10px; }
+
+  .github-link {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #ccc; 
+    transition: 0.3s;
+  }
+
+  .github-link:hover {
+    color: #C7D9DD;;
+    border-bottom-color: #C7D9DD;;
+  }
+
+
+</style>
+
+<section id="intro">
+  <div class="intro-text">
+    <h2>Giới thiệu</h2>
+    <p>Xin chào, tôi là <strong>Phan Dạ Thi</strong>. Đây là hồ sơ năng lực (CV) của tôi, nơi ghi lại quá trình học tập và các thông tin liên hệ trong công việc.</p>
+  </div>
+  <div class="intro-image">
+    <img src="" alt="Profile Picture">
+  </div>
+</section>
+
+<section id="edu">
+  <h2>Học vấn</h2>
+  <div class="edu-item">
+    <span class="year">2020 - 2023:</span>
+    <span>THPT Chuyên Nguyễn Huệ - Hà Nội</span>
+  </div>
+  <div class="edu-item">
+    <span class="year">2023 - Nay:</span>
+    <span>Học viện Công nghệ Bưu chính Viễn thông (PTIT) - Ngành CNTT</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Liên hệ</h2>
+  <ul style="list-style-type:none">
+    <li><strong >Email:</strong> iresme3012@gmail.com</li>
+    <li><strong>Phone:</strong> 0386251376</li>
+    <li> <a href="https://github.com/pp3012" title="https://github.com/pp3012" target="_blank" class="github-link"><strong>GitHub</strong></a></li>
+  </ul>
+</section>
+
+
+</body>
+</html>
