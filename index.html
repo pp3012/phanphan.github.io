@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f9fbfb;
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 10%;
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #C7D9DD;
+      padding-bottom: 10px;
+      color: #7AB2B2;
+      width: 100%;
+      text-align: center;
+    }
+
+    .form {
+      background: #fff;
+      border: none;
+      padding: 40px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Đổ bóng */
+    }
+
+    input {
+      display: block;
+      margin: 15px 0;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #7AB2B2;
+      box-shadow: 0 0 5px rgba(122, 178, 178, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #7AB2B2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #4D8686;
+      transform: translateY(-2px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    th {
+      background-color: #7AB2B2;
+      color: white;
+      padding: 15px;
+      text-align: left;
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    tr:hover { background-color: #f1f7f7; }
+
+    .btn-edit {
+      background-color: #EEF7FF;
+      color: #7AB2B2;
+      padding: 5px 15px;
+      width: auto;
+      font-size: 0.9rem;
+      border: 1px solid #7AB2B2;
+    }
+
+    .btn-edit:hover {
+      background-color: #7AB2B2;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<h2>Danh sách Sinh viên</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Mã SV</th>
+    <th>Họ Tên</th>
+    <th>Ngày Sinh</th>
+    <th>Lớp</th>
+    <th>GPA</th>
+    <th>Thao tác</th>
+  </tr>
+  </thead>
+  <tbody id="table"></tbody>
+</table>
+
+<h2>Nhập thông tin Sinh viên</h2>
+<div class="form">
+  <input type="text" id="id" placeholder="Mã Sinh viên">
+  <input type="text" id="name" placeholder="Họ và tên">
+  <input type="date" id="birth">
+  <input type="text" id="lop" placeholder="Lớp học">
+  <input type="number" id="gpa" placeholder="Điểm GPA">
+  <button onclick="addnupdate()">Lưu</button>
+</div>
+
+
+<script src="QLSV.js"></script>
+
+</body>
+</html>
