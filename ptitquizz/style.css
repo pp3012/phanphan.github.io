@@ -1,0 +1,106 @@
+:root {
+    --ptit-red: #9e100e;
+    --ptit-gold: #ffcc00;
+    --light-gray: #f4f4f4;
+    --dark-text: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    background-color: var(--light-gray);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: var(--ptit-red);
+    color: white;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 { text-align: center; padding: 20px; border-bottom: 1px solid #c0392b; margin: 0; }
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active { background: #7a0c0a; border-right: 4px solid var(--ptit-gold); }
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Biểu đồ cột - QUAN TRỌNG */
+.chart-container {
+    display: flex;
+    align-items: flex-end; 
+    height: 250px;         
+    gap: 30px;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+    background: #fdfdfd;
+}
+
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+}
+
+.bar {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: 0.5s;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th { background-color: var(--ptit-red); color: white; }
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-add { background: #27ae60; color: white; }
+.btn-delete { background: #e74c3c; color: white; }
+.btn-export { background: #2980b9; color: white; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar { width: 70px; }
+    .sidebar h2 { display: none; }
+    .main-content { margin-left: 70px; width: calc(100% - 70px); }
+}
