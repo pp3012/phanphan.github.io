@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>PTIT Exam Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <h2>PTIT EXAM</h2>
+    <span>ADMIN PANEL</span>
+  </div>
+
+  <nav>
+    <a href="#" onclick="showPage('dashboard')" class="active" id="link-dashboard"> Dashboard</a>
+    <a href="#" onclick="showPage('statistics')" id="link-statistics"> Thống kê</a>
+    <a href="#" onclick="showPage('results')" id="link-results"> Xem kết quả</a>
+  </nav>
+</div>
+
+<div class="main-content">
+
+  <!-- ================= DASHBOARD ================= -->
+  <div id="dashboard" class="page-section active">
+
+    <header class="header-title">
+      <h1>Tổng quan Hệ thống</h1>
+      <p>Quản lý kỳ thi và danh sách sinh viên</p>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3>Tổng số Kỳ thi</h3>
+        <p>24</p>
+      </div>
+      <div class="stat-card">
+        <h3>Sinh viên Online</h3>
+        <p>156</p>
+      </div>
+      <div class="stat-card">
+        <h3>Bài thi đã nộp</h3>
+        <p>1,042</p>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ================= THỐNG KÊ ================= -->
+  <div id="statistics" class="page-section">
+    <div class="card">
+      <h3>Lọc kết quả</h3>
+      <select>
+        <option>Tất cả kỳ thi</option>
+      </select>
+      <button class="btn btn-export" onclick="alert('Đang xuất PDF...')">Xuất PDF</button>
+      <button class="btn btn-export" style="background:#27ae60;" onclick="alert('Đang xuất Excel...')">Xuất Excel</button>
+    </div>
+
+    <div class="card">
+      <h3>Phân phối điểm số</h3>
+      <div class="chart-container">
+        <div class="chart-item" style="height:100%;">
+          <div class="bar" style="background:#e74c3c; height:20%;"></div>
+          <small>Yếu</small>
+        </div>
+        <div class="chart-item" style="height:100%;">
+          <div class="bar" style="background:#e67e22; height:50%;"></div>
+          <small>Khá</small>
+        </div>
+        <div class="chart-item" style="height:100%;">
+          <div class="bar" style="background:#27ae60; height:80%;"></div>
+          <small>Giỏi</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= XEM KẾT QUẢ ================= -->
+  <div id="results" class="page-section">
+
+    <div class="card">
+      <h3>Tra cứu sinh viên</h3>
+      <input type="text" id="searchInput"placeholder="Nhập mã SV (ví dụ: B21DCCN001)..."
+             style="width:300px; padding:8px;">
+      <button class="btn btn-add" onclick="searchStudent()">Tìm kiếm</button>
+    </div>
+
+    <div id="resultArea" style="display:none;">
+      <div class="card">
+        <h4>Sinh viên: Nguyễn Văn A (B21DCCN001)</h4>
+        <table>
+          <tr>
+            <th>Kỳ thi</th>
+            <th>Điểm</th>
+            <th>Trạng thái</th>
+            <th>Chi tiết</th>
+          </tr>
+          <tr>
+            <td>Cấu trúc dữ liệu</td>
+            <td>8.5/10</td>
+            <td>Hoàn thành</td>
+            <td>
+              <button onclick="showDetail()">Xem bài làm</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page-section').forEach(sec => {
+      sec.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    document.getElementById('link-' + pageId).classList.add('active');
+  }
+
+  function searchStudent() {
+    document.getElementById('resultArea').style.display = 'block';
+  }
+
+  function showDetail() {
+    alert("Câu 1: Đúng\nCâu 2: Sai (Đáp án: B)\nGiải thích: ...");
+  }
+
+</script>
+
+</body>
+</html>
